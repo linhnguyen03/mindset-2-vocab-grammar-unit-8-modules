@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mindset 2 Unit 8 – Vocabulary & Grammar</title>
+<style>
+:root{
+  --navy:#1b2a41;
+  --navy2:#28405f;
+  --sand:#f6f3ea;
+  --gold:#c9a227;
+  --good:#1e7d45;
+  --bad:#b3261e;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--sand);color:#222;line-height:1.55;}
+header{background:var(--navy);color:#fff;padding:28px 20px;text-align:center;}
+header h1{margin:0 0 6px;font-size:1.8em;}
+header p{margin:0;color:#d7dde6;font-size:.98em;}
+.container{max-width:880px;margin:0 auto;padding:24px 16px 80px;}
+.card{background:#fff;border-radius:12px;padding:22px 24px;margin-bottom:22px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.ex-title{color:var(--navy);border-bottom:3px solid var(--gold);display:inline-block;padding-bottom:4px;margin:0 0 10px;font-size:1.25em;}
+.ex-instructions{color:#444;margin:0 0 16px;font-size:.98em;}
+.infobox{background:#f3ead0;border:1px solid #d9c47f;border-radius:10px;padding:14px 18px;margin:0 0 18px;font-size:.94em;}
+.wordbank{background:#eef2fa;border:1px dashed #9fb3d6;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:.95em;}
+.wordbank b{color:var(--navy2);}
+.q{margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #eee;}
+.q:last-child{border-bottom:none;}
+.q-num{font-weight:700;color:var(--navy2);margin-right:4px;}
+select, .blank-input{padding:6px 8px;border:1px solid #c6cedb;border-radius:6px;font-size:.96em;font-family:inherit;}
+.blank-input{min-width:150px;}
+.opts label{display:block;margin:4px 0;cursor:pointer;}
+.opts.inline label{display:inline-block;margin-right:16px;}
+.opts input{margin-right:6px;}
+.feedback{margin-left:8px;font-weight:600;}
+.feedback.correct{color:var(--good);}
+.feedback.wrong{color:var(--bad);}
+.correct-answer{font-weight:500;color:var(--bad);font-style:italic;}
+.example-tag{font-size:.85em;color:var(--muted);font-style:italic;}
+.locked select, .locked input{pointer-events:none;opacity:.8;}
+.submit-bar{position:sticky;bottom:0;background:var(--sand);padding:14px 0;text-align:center;border-top:1px solid #ddd;}
+button{background:var(--navy);color:#fff;border:none;padding:12px 26px;border-radius:30px;font-size:1em;cursor:pointer;margin:0 6px;}
+button.secondary{background:#fff;color:var(--navy);border:1px solid var(--navy);}
+.score-card{display:none;background:var(--navy);color:#fff;border-radius:12px;padding:20px;text-align:center;margin-bottom:22px;}
+.score-card h2{margin:0 0 6px;}
+.score-num{font-size:2em;font-weight:700;color:var(--gold);}
+.subq{background:#f8f9fb;border:1px solid #e1e6ee;border-radius:8px;padding:12px 14px;margin-bottom:14px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mindset 2 Unit 8 – Vocabulary & Grammar</h1>
+  <p>Festivals and Traditions: event vocabulary, word forms, and first/second conditionals</p>
+</header>
+
+<div class="container">
+
+  <div id="scoreCardTop" class="score-card">
+    <h2>Your Score</h2>
+    <div id="scoreTextTop" class="score-num"></div>
+    <p id="scoreMsgTop"></p>
+  </div>
+
+  <!-- EXERCISE 1 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 1</h2>
+    <p class="ex-instructions">Choose the answers to the questions. Use the events in the box.</p>
+    <div class="wordbank"><b>Word bank:</b> a comedy festival, a fair, a film festival, a firework display, a music festival, a parade</div>
+    <div id="ex1"></div>
+  </div>
+
+  <!-- EXERCISE 2 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 2</h2>
+    <p class="ex-instructions">Choose the <u>two</u> words or phrases that can complete each sentence.</p>
+    <div id="ex2"></div>
+  </div>
+
+  <!-- EXERCISE 3 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 3</h2>
+    <p class="ex-instructions">Complete the sentences with the correct form of the words in brackets. The first question has been done for you.</p>
+    <div id="ex3"></div>
+  </div>
+
+  <!-- EXERCISE 4 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 4</h2>
+    <p class="ex-instructions">Complete the text. Use the words in the box.</p>
+    <div class="wordbank"><b>Word bank:</b> ambitious, atmosphere, budget, demand, disaster, promote, realistic, recover, sponsorship, venue</div>
+    <div id="ex4"></div>
+  </div>
+
+  <!-- EXERCISE 5 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 5</h2>
+    <p class="ex-instructions">Choose the correct words to complete the text.</p>
+    <div id="ex5"></div>
+  </div>
+
+  <!-- EXERCISE 6 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 6</h2>
+    <p class="ex-instructions">Read the information. Then choose the correct verb forms to complete the conversation.</p>
+    <div class="infobox"><b>First conditional</b><br>
+    We use the first conditional to talk about things that are likely to happen in the future.<br><br>
+    In the <i>if</i>-clause, we don't usually use <i>will</i>. Use the present tense instead:<br>
+    • <i>If</i> + present simple: <i><b>If there are</b> some tickets left, I'll buy one.</i><br>
+    • <i>If</i> + present continuous: <i><b>If you're planning</b> to come too, I'll buy you a ticket.</i><br>
+    • <i>If</i> + present perfect: <i><b>If they've already sold</b> all the tickets, we'll have to watch the festival on TV instead.</i><br><br>
+    In the main clause, we usually use a future form or an imperative:<br>
+    • <i>will</i>: <i>If they cancel the festival, <b>I'll be</b> disappointed.</i><br>
+    • <i>going to</i>: <i>If they don't give me my money back, <b>I'm going to complain</b> to the organisers.</i><br>
+    • imperative: <i>If you write to them, <b>ask</b> for my money back, too.</i></div>
+    <div id="ex6"></div>
+  </div>
+
+  <!-- EXERCISE 7 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 7</h2>
+    <p class="ex-instructions">Read the information again. Then correct the mistakes in the sentences. Each sentence has <u>one</u> mistake with the verb form. The first question has been done for you.</p>
+    <div id="ex7"></div>
+  </div>
+
+  <!-- EXERCISE 8 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 8</h2>
+    <p class="ex-instructions">Read the information. Then complete the sentences. Use the second conditional with the words in brackets.</p>
+    <div class="infobox"><b>Second conditional</b><br>
+    • We use the second conditional to talk about unreal present situations:<br>
+    <i>If I <b>knew</b> the answer, I'<b>d tell</b> you. But I don't, so I can't.</i><br><br>
+    • We also use the second conditional to talk about things that are unlikely to happen in the future:<br>
+    <i>We're not going to have the festival on a Tuesday afternoon. If we <b>did</b> that, nobody <b>would come</b>!</i><br><br>
+    In the <i>if</i>-clause, we don't usually use <i>would</i>. Use a past tense (e.g. past simple) instead:<br>
+    <i>If I <b>had</b> more money, I'd buy a ticket.</i><br>
+    <i>If I <b>could</b> dance, I'd love to take part in a parade.</i><br><br>
+    • In the second conditional, the past of <i>be</i> is usually <i>were</i>, even with <i>I/he/she/it</i>:<br>
+    <i>If I <b>were</b> you, I'd be more careful.</i><br>
+    <i>If the weather <b>was/were</b> better, we could have the concert outside.</i><br><br>
+    • In the main clause, use <i>could, might</i> or <i>would</i>:<br>
+    <i>If you tried a bit harder, you <b>might</b> get better results.</i></div>
+    <div id="ex8"></div>
+  </div>
+
+  <!-- EXERCISE 9 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 9</h2>
+    <p class="ex-instructions">Read the information. Then complete the conversation with the correct verb forms.</p>
+    <div class="infobox"><b>First and second conditionals – talking about the future</b>
+    <ul style="margin:8px 0 0;padding-left:20px;">
+      <li>We use the first conditional to talk about things that are <b>likely</b> in the future (e.g. <i>If you do X, Y <b>will</b> happen</i>).</li>
+      <li>We use the second conditional to talk about things that are <b>unlikely</b> in the future (e.g. <i>If you did X, Y <b>would</b> happen</i>).</li>
+      <li>We don't normally mix first and second conditionals in one sentence.</li>
+      <li>We don't normally use <i>will</i> or <i>would</i> in the <i>if</i>-clause.</li>
+      <li>We often use the first conditional to show that we think something is a good idea (e.g. <i>If we do that, it'll be great</i>).</li>
+      <li>We often use the second conditional to show that we think something is a bad idea (e.g. <i>If we did that it'd be terrible</i>).</li>
+    </ul></div>
+    <div id="ex9"></div>
+  </div>
+
+  <!-- EXERCISE 10 -->
+  <div class="card">
+    <h2 class="ex-title">Exercise 10</h2>
+    <p class="ex-instructions">Complete the conversation. Use the correct form of the words in brackets.</p>
+    <div id="ex10"></div>
+  </div>
+
+  <div class="submit-bar">
+    <button onclick="gradeAll()">✅ Check my answers</button>
+    <button class="secondary" onclick="resetAll()">↺ Reset</button>
+  </div>
+
+  <div id="scoreCard" class="score-card">
+    <h2>Your Score</h2>
+    <div id="scoreText" class="score-num"></div>
+    <p id="scoreMsg"></p>
+  </div>
+
+</div>
+
+<script>
+/* ---------- ANSWER KEY ---------- */
+const KEY = {
+  ex1: ["a comedy festival","a firework display","a music festival","a parade","a film festival","a fair"],
+  ex2: [
+    ["a long time","our tickets"],
+    ["the end of winter","with our families"],
+    ["amazing performances","film shows"],
+    ["their latest song","live"],
+    ["yourself","the festival"],
+    ["had something for everyone","was very colourful"]
+  ],
+  ex3: ["traditional","entertaining","enjoyable","disappointing","experienced","challenging","impressive","sociable"],
+  ex4: ["ambitious","realistic","venue","atmosphere","disaster","promote","demand","budget","recover","sponsorship"],
+  ex5: ["attended","idea","ceremonies","custom","protect","culture","lasts","attraction"],
+  ex6: ["it's","won't be","we take","they'll probably cancel","that happens","they cancel","won't be","is canceled"],
+  ex7: ["will","don't","aren't","I'll definitely","turn","we'll be"],
+  ex8: ["were","could","had","asked","wouldn't","didn't have to","weren't","would"],
+  ex9: ["don't find","closes","we could","we organized","we'd only raise","they'll start","that happens","were","we did","they all decided"],
+  ex10: ["could","rains","will hold","come","were","ask","can't find","'ll come","let"]
+};
+
+function normalize(s){
+  return (s||"").toString().trim().toLowerCase().replace(/[-–—'’\s]/g,"");
+}
+function mark(elId, isCorrect, correctText){
+  const el = document.getElementById(elId);
+  if(!el) return;
+  if(isCorrect){ el.innerHTML = "✔"; el.className="feedback correct"; }
+  else { el.innerHTML = `✘ <span class="correct-answer">(answer: ${correctText})</span>`; el.className="feedback wrong"; }
+}
+function getRadio(name){
+  const r = document.querySelector(`input[name="${name}"]:checked`);
+  return r ? r.value : null;
+}
+
+/* ---------- BUILD EXERCISE 1 ---------- */
+const ex1data = [
+  "Where would be the best place to hear a lot of jokes?",
+  "Where would be the best place to see colourful explosions in the sky?",
+  "Where would be the best place to watch a large number of live bands?",
+  "Where would you be in a crowd watching a group of performers walking, marching or dancing past you?",
+  "Where would be the best place to see many new films?",
+  "Where would be the best place to meet people with the same hobby or interest?"
+];
+const ex1words = ["a comedy festival","a fair","a film festival","a firework display","a music festival","a parade"];
+document.getElementById('ex1').innerHTML = ex1data.map((t,i)=>`
+  <div class="q"><span class="q-num">${i+1}.</span> ${t}<br>
+  <select id="ex1-${i}"><option value="">-- choose --</option>${ex1words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select>
+  <span class="feedback" id="ex1-fb-${i}"></span></div>
+`).join('');
+
+/* ---------- BUILD EXERCISE 2 ---------- */
+const ex2data = [
+  {t:"We had to queue for … .", opts:["a long time","our tickets","the atmosphere"]},
+  {t:"The purpose of the festival is to celebrate … .", opts:["the end of winter","the recent disaster","with our families"]},
+  {t:"I attended a lot of … at the festival.", opts:["amazing performances","famous people","film shows"]},
+  {t:"I hope they're going to perform … .", opts:["the stage","their latest song","live"]},
+  {t:"Did you enjoy … ?", opts:["yourself","the festival","the festival-goers"]},
+  {t:"Yes, I did. I thought the festival … .", opts:["lasted for five days","had something for everyone","was very colourful"]}
+];
+document.getElementById('ex2').innerHTML = ex2data.map((it,i)=>`
+  <div class="q"><span class="q-num">${i+1}.</span> ${it.t} <span class="example-tag">(choose two)</span><br>
+  <div class="opts">${it.opts.map(o=>`<label><input type="checkbox" name="ex2-${i}" value="${o}"> ${o}</label>`).join('')}</div>
+  <span class="feedback" id="ex2-fb-${i}"></span></div>
+`).join('');
+
+/* ---------- BUILD EXERCISE 3 ---------- */
+const ex3data = [
+  {t:"It's a very ___ festival. People have been celebrating it for hundreds of years.", w:"(tradition)", example:"traditional"},
+  {t:"The street performers were really ___. We watched them for hours.", w:"(entertain)"},
+  {t:"It was a very ___ concert. I'm really pleased I went to it.", w:"(enjoy)"},
+  {t:"Many people thought the festival was rather ___. I expected it to be better, too.", w:"(disappoint)"},
+  {t:"I thought the fair last weekend was quite poor. The organisers didn't seem to be very ___.", w:"(experience)"},
+  {t:"The play was quite ___ at times. I couldn't always hear the actors and the lights were too bright.", w:"(challenge)"},
+  {t:"It was an ___ performance. The performers were especially creative and skilful.", w:"(impress)"},
+  {t:"Generally, I like street parties because they are so ___. They're a great way to get to know people in the local community.", w:"(social)"}
+];
+document.getElementById('ex3').innerHTML = ex3data.map((it,i)=>{
+  if(i===0){
+    return `<div class="q"><span class="q-num">1.</span> ${it.t.replace('___', `<u>${it.example}</u>`)} ${it.w} <span class="example-tag">(example)</span></div>`;
+  }
+  return `<div class="q"><span class="q-num">${i+1}.</span> ${it.t.replace('___', `<input class="blank-input" id="ex3-${i-1}">`)} ${it.w}
+  <span class="feedback" id="ex3-fb-${i-1}"></span></div>`;
+}).join('');
+
+/* ---------- BUILD EXERCISE 4 ---------- */
+const ex4blanks = [
+  "If you're planning to organise your own festival, don't be too",
+  ". Keep things as simple as possible, especially if it's your first festival.",
+  "Firstly, think about the number of people you want to attend your festival. Be",
+  "and don't get carried away into thinking that the bigger the festival, the better it will be. However, at the same time, consider your",
+  "when calculating numbers. For example, 500 people standing in a field that would hold a crowd of several thousand would result in an empty field, a terrible",
+  "and a festival that's a",
+  ". Once you've decided upon numbers, make sure that you",
+  "the festival to create sufficient",
+  "for tickets. Another key question is your",
+  "– how much money do you have to spend? Hopefully you'll",
+  "some or all of your money from ticket sales, but you'll need to spend a lot of money before you get anything back from advertising. So, one of your main priorities should be to get",
+  "from businesses and other organisations."
+];
+const ex4words = ["ambitious","atmosphere","budget","demand","disaster","promote","realistic","recover","sponsorship","venue"];
+document.getElementById('ex4').innerHTML = `<p>
+  ${ex4blanks[0]} <select id="ex4-0"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-0"></span>
+  ${ex4blanks[1]}</p>
+  <p>${ex4blanks[2]} <select id="ex4-1"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-1"></span>
+  ${ex4blanks[3]} <select id="ex4-2"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-2"></span>
+  ${ex4blanks[4]} <select id="ex4-3"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-3"></span>
+  ${ex4blanks[5]} <select id="ex4-4"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-4"></span>
+  ${ex4blanks[6]} <select id="ex4-5"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-5"></span>
+  ${ex4blanks[7]} <select id="ex4-6"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-6"></span>
+  ${ex4blanks[8]} <select id="ex4-7"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-7"></span>
+  ${ex4blanks[9]} <select id="ex4-8"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-8"></span>
+  ${ex4blanks[10]} <select id="ex4-9"><option value="">--</option>${ex4words.map(w=>`<option value="${w}">${w}</option>`).join('')}</select><span class="feedback" id="ex4-fb-9"></span>
+  ${ex4blanks[11]}</p>`;
+
+/* ---------- BUILD EXERCISE 5 ---------- */
+function sel(id, opts){
+  return `<select id="${id}"><option value="">--</option>${opts.map(o=>`<option value="${o}">${o}</option>`).join('')}</select><span class="feedback" id="${id}-fb"></span>`;
+}
+document.getElementById('ex5').innerHTML = `<p>
+The best festival I've ever ${sel('ex5-0',["appeared","attended","attracted"])} is the International Festival of Masks and the Arts (FESTIMA), in the city of Dédougou, Burkina Faso. As the name suggests, the main ${sel('ex5-1',["example","idea","knowledge"])} behind the festival is masks, and specifically, the wearing of traditional masks.</p>
+<p>Masks have been an important part of ${sel('ex5-2',["catastrophes","celebrities","ceremonies"])} and celebrations in West Africa for thousands of years. According to local tradition and ${sel('ex5-3',["custom","fashion","native"])}, when the performer puts on the mask, he becomes the animal or bird that he is wearing. One of the main purposes of FESTIMA is to ${sel('ex5-4',["prevent","protect","provide"])} this tradition and to tell the world about it. The festival dates back to 1996, when a group of students decided they needed to preserve this important part of their ${sel('ex5-5',["conservation","construction","culture"])}. The festival takes place every two years and ${sel('ex5-6',["during","ends","lasts"])} a full week. It is now a big ${sel('ex5-7',["architecture","attachment","attraction"])} with performers from all over West Africa, as well as over 100,000 spectators from around the world.</p>`;
+for(let i=0;i<8;i++){ document.getElementById(`ex5-${i}-fb`).id = `ex5-fb-${i}`; }
+
+/* ---------- BUILD EXERCISE 6 ---------- */
+document.getElementById('ex6').innerHTML = `
+<div class="subq"><b>A:</b> There's going to be a parade tomorrow. If ${sel('ex6-0',["it'll be","it's going to be","it's"])} as good as last year's parade, we'll have a great time.</div>
+<div class="subq"><b>B:</b> Maybe, but the weather was a lot better last year. If it rains tomorrow, it ${sel('ex6-1',["isn't","isn't going to be","won't be"])} much fun!</div>
+<div class="subq"><b>A:</b> Don't worry. We'll stay dry if ${sel('ex6-2',["we're taking","we take","we'll take"])} an umbrella.</div>
+<div class="subq"><b>B:</b> Anyway, if the weather's really bad, ${sel('ex6-3',["probably cancel","they'll probably cancel","they're going to cancel"])} the parade.</div>
+<div class="subq"><b>A:</b> OK, so if ${sel('ex6-4',["that happens","that's happening","that'll happen"])}, what shall we do? There's also a comedy festival this weekend.</div>
+<div class="subq"><b>B:</b> That sounds good. So, if ${sel('ex6-5',["they cancel","they've cancelled","they'll cancel"])} the parade, we'll go to the comedy festival.</div>
+<div class="subq"><b>A:</b> Yes, but let's buy tickets today. If we wait until tomorrow, there ${sel('ex6-6',["aren't going to be","isn't","won't be"])} any tickets left. And if the parade ${sel('ex6-7',["is canceled","is going to be canceled","will be canceled"])}, everyone in the city will want to go to the comedy festival!</div>
+`;
+for(let i=0;i<8;i++){ document.getElementById(`ex6-${i}-fb`).id = `ex6-fb-${i}`; }
+
+/* ---------- BUILD EXERCISE 7 ---------- */
+const ex7data = [
+  {t:"You're going to feel sick if <s>you'll</s> eat too much food.", example:"you"},
+  {t:"What [do] you do if there aren't any tickets left tomorrow?"},
+  {t:"If you [won't] want to get cold and wet, take a warm coat to the festival."},
+  {t:"If there [won't] be enough people, there won't be much of an atmosphere."},
+  {t:"I [definitely] take some photographs if I get close enough to the band at tonight's concert."},
+  {t:"Will there be enough space for everybody if 100,000 people [will turn] up?"},
+  {t:"If we get enough sponsorship money at next week's meeting, [we're] able to organise a great festival."}
+];
+document.getElementById('ex7').innerHTML = ex7data.map((it,i)=>{
+  if(i===0){
+    return `<div class="q"><span class="q-num">1.</span> ${it.t} <span class="example-tag">(example — correct word: "${it.example}")</span></div>`;
+  }
+  return `<div class="q"><span class="q-num">${i+1}.</span> ${it.t}<br>
+  Correction: <input class="blank-input" id="ex7-${i-1}" style="width:220px;">
+  <span class="feedback" id="ex7-fb-${i-1}"></span></div>`;
+}).join('');
+
+/* ---------- BUILD EXERCISE 8 ---------- */
+const ex8data = [
+  {t:"If I ___ you, I wouldn't take so much cash to the festival.", w:"(be)"},
+  {t:"It'd be amazing if I ___ dance like that!", w:"(can)"},
+  {t:"If I ___ more money, I'd go to a lot more music festivals around the world.", w:"(have)"},
+  {t:"What would you do if somebody ___ to borrow your phone?", w:"(ask)"},
+  {t:"I ___ mind queueing so long if the food was a bit better.", w:"(not / would)"},
+  {t:"If I ___ work tomorrow, I'd come to the festival with you.", w:"(not / have to)"},
+  {t:"I'd definitely buy a ticket if the festival ___ so expensive.", w:"(not / be)"},
+  {t:"I think more people ___ attend if the concert took place at the weekend.", w:"(would)"}
+];
+document.getElementById('ex8').innerHTML = ex8data.map((it,i)=>`
+  <div class="q"><span class="q-num">${i+1}.</span> ${it.t.replace('___', `<input class="blank-input" id="ex8-${i}">`)} ${it.w}
+  <span class="feedback" id="ex8-fb-${i}"></span></div>
+`).join('');
+
+/* ---------- BUILD EXERCISE 9 ---------- */
+document.getElementById('ex9').innerHTML = `
+<div class="subq"><b>Andy:</b> The local theatre has money problems. I've heard that if the owners ${sel('ex9-0',["don't find","didn't find","won't find"])} £100,000 by the end of the year, it's probably going to close.</div>
+<div class="subq"><b>Bella:</b> Oh, that's terrible. If the theatre ${sel('ex9-1',["closed","closes","would close"])}, it'll be really bad for the town.</div>
+<div class="subq"><b>Charlotte:</b> I know it sounds unlikely, but if ${sel('ex9-2',["we could","we'll","we'd"])} raise some money, maybe we could save the theatre.</div>
+<div class="subq"><b>Bella:</b> That's a great idea. For example, if ${sel('ex9-3',["we organize","we organized","we'd organize"])} a comedy festival in the theatre, we could sell tickets.</div>
+<div class="subq"><b>Andy:</b> I'm not sure. Even if we sold a thousand tickets for £10, ${sel('ex9-4',["we only raise","we'd only raise","we'll only raise"])} £10,000. It wouldn't be enough.</div>
+<div class="subq"><b>Charlotte:</b> That's true, but I still think we should do it. If a thousand people have a great time at the festival, maybe ${sel('ex9-5',["they'll start","they started","they'd start"])} going to the theatre more often.</div>
+<div class="subq"><b>Bella:</b> Exactly. If ${sel('ex9-6',["that happened","that happens","that'll happen"])}, the theatre will be able to continue for many years.</div>
+<div class="subq"><b>Andy:</b> You're right. How many people would come if the tickets for the comedy festival ${sel('ex9-7',["is","were","would be"])} free?</div>
+<div class="subq"><b>Bella:</b> Thousands. But we wouldn't make any money at all if ${sel('ex9-8',["we did","we do","we'd do"])} that!</div>
+<div class="subq"><b>Andy:</b> No, but if ${sel('ex9-9',["they all decided","they all decide","they'll all decide"])} to come back to the theatre every week, the theatre would make millions!</div>
+`;
+for(let i=0;i<10;i++){ document.getElementById(`ex9-${i}-fb`).id = `ex9-fb-${i}`; }
+
+/* ---------- BUILD EXERCISE 10 ---------- */
+document.getElementById('ex10').innerHTML = `
+<div class="subq"><b>A:</b> I know that you have other plans, but if you <input class="blank-input" id="ex10-0" style="width:100px;"><span class="feedback" id="ex10-fb-0"></span> (can) come to my town on Saturday, you wouldn't regret it. It's the day of our town festival. It's not huge, but it's usually good fun. It's usually held in the park, but if it <input class="blank-input" id="ex10-1" style="width:100px;"><span class="feedback" id="ex10-fb-1"></span> (rain) the organisers <input class="blank-input" id="ex10-2" style="width:120px;"><span class="feedback" id="ex10-fb-2"></span> (hold) most of the events at the town hall instead.</div>
+<div class="subq"><b>B:</b> OK, I'll see if I can come after all. I might need to move a few things around.</div>
+<div class="subq"><b>A:</b> Great. If you <input class="blank-input" id="ex10-3" style="width:100px;"><span class="feedback" id="ex10-fb-3"></span> (come) to my house first, we'll go to the festival from there. If I <input class="blank-input" id="ex10-4" style="width:100px;"><span class="feedback" id="ex10-fb-4"></span> (was) you, I'd aim to get here by 10:30. After that it'll get very busy and you might be too late for the parade at 11:00. If you're coming by bus, <input class="blank-input" id="ex10-5" style="width:100px;"><span class="feedback" id="ex10-fb-5"></span> (ask) the driver to stop at Cranshaw Road — my house is a five-minute walk from there. Don't worry, though. If you <input class="blank-input" id="ex10-6" style="width:120px;"><span class="feedback" id="ex10-fb-6"></span> (not / find) my house, text me and I<input class="blank-input" id="ex10-7" style="width:100px;"><span class="feedback" id="ex10-fb-7"></span> (come) and collect you.</div>
+<div class="subq"><b>B:</b> That's a good idea. I've got your number.</div>
+<div class="subq"><b>A:</b> So, maybe see you on Saturday? If you change your mind, just <input class="blank-input" id="ex10-8" style="width:100px;"><span class="feedback" id="ex10-fb-8"></span> (let) me know.</div>
+<div class="subq"><b>B:</b> OK, will do!</div>
+`;
+
+/* ---------- GRADING ---------- */
+function gradeAll(){
+  let total=0, scored=0;
+
+  KEY.ex1.forEach((ans,i)=>{
+    const v = document.getElementById(`ex1-${i}`).value;
+    const ok = v===ans;
+    total++; if(ok) scored++;
+    mark(`ex1-fb-${i}`, ok, ans);
+  });
+
+  KEY.ex2.forEach((ansArr,i)=>{
+    const checked = Array.from(document.querySelectorAll(`input[name="ex2-${i}"]:checked`)).map(el=>el.value);
+    const ok = checked.length===2 && ansArr.every(a=>checked.includes(a));
+    total++; if(ok) scored++;
+    mark(`ex2-fb-${i}`, ok, ansArr.join(' / '));
+  });
+
+  KEY.ex3.forEach((ans,i)=>{
+    const v = document.getElementById(`ex3-${i}`).value;
+    const ok = normalize(v)===normalize(ans);
+    total++; if(ok) scored++;
+    mark(`ex3-fb-${i}`, ok, ans);
+  });
+
+  KEY.ex4.forEach((ans,i)=>{
+    const v = document.getElementById(`ex4-${i}`).value;
+    const ok = v===ans;
+    total++; if(ok) scored++;
+    mark(`ex4-fb-${i}`, ok, ans);
+  });
+
+  KEY.ex5.forEach((ans,i)=>{
+    const v = document.getElementById(`ex5-${i}`).value;
+    const ok = v===ans;
+    total++; if(ok) scored++;
+    mark(`ex5-fb-${i}`, ok, ans);
+  });
+
+  KEY.ex6.forEach((ans,i)=>{
+    const v = document.getElementById(`ex6-${i}`).value;
+    const ok = v===ans;
+    total++; if(ok) scored++;
+    mark(`ex6-fb-${i}`, ok, ans);
+  });
+
+  KEY.ex7.forEach((ans,i)=>{
+    const v = document.getElementById(`ex7-${i}`).value;
+    const ok = normalize(v)===normalize(ans);
+    total++; if(ok) scored++;
+    mark(`ex7-fb-${i}`, ok, ans);
+  });
+
+  KEY.ex8.forEach((ans,i)=>{
+    const v = document.getElementById(`ex8-${i}`).value;
+    const ok = normalize(v)===normalize(ans);
+    total++; if(ok) scored++;
+    mark(`ex8-fb-${i}`, ok, ans);
+  });
+
+  KEY.ex9.forEach((ans,i)=>{
+    const v = document.getElementById(`ex9-${i}`).value;
+    const ok = v===ans;
+    total++; if(ok) scored++;
+    mark(`ex9-fb-${i}`, ok, ans);
+  });
+
+  KEY.ex10.forEach((ans,i)=>{
+    const v = document.getElementById(`ex10-${i}`).value;
+    const ok = normalize(v)===normalize(ans);
+    total++; if(ok) scored++;
+    mark(`ex10-fb-${i}`, ok, ans);
+  });
+
+  document.querySelectorAll('#ex1,#ex2,#ex3,#ex4,#ex5,#ex6,#ex7,#ex8,#ex9,#ex10').forEach(sec=>{
+    sec.querySelectorAll('input, select').forEach(el=>{ el.disabled = true; });
+  });
+
+  const pct = Math.round((scored/total)*100);
+  let msg = "";
+  if(pct>=90) msg="Excellent work! 🎉";
+  else if(pct>=70) msg="Good job — review the ones you missed.";
+  else if(pct>=50) msg="Nice try — go back over the rules and try again.";
+  else msg="Keep practicing — review the vocabulary and conditionals above.";
+
+  document.getElementById('scoreCard').style.display='block';
+  document.getElementById('scoreText').textContent = `${scored} / ${total}`;
+  document.getElementById('scoreMsg').textContent = `${pct}% correct. ${msg}`;
+
+  document.getElementById('scoreCardTop').style.display='block';
+  document.getElementById('scoreTextTop').textContent = `${scored} / ${total}`;
+  document.getElementById('scoreMsgTop').textContent = `${pct}% correct. ${msg}`;
+
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function resetAll(){ location.reload(); }
+</script>
+
+</body>
+</html>
